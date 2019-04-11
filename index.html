@@ -1,31 +1,60 @@
 <!doctype html>
 <html>
 <head>
-    <title>Example Domain</title>
+<title>Example Domain</title>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+<meta charset="utf-8" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 
-<div id="app">
-  {{ message }}
-</div>
+	<div id="app" title="sdkfhks" >
+ <span v-bind:title="title">Hey</span><br/>
+		{{ message }}
+	 <span v-if="seen">Now you see me</span>
+	 
+	 
+	 <ol>
+	  <button v-on:click="reverseMessage">Reverse Message</button>
+    <li v-for="todo in todos">
+      {{ todo}}
+    </li>
+  </ol>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 </div>
 
 
-
-<script type="text/javascript">
+	<script type="text/javascript">
 
 var app = new Vue({
 	  el: '#app',
-	  data: {
-	    message: 'Hello PewDiePie!'
-	  }
+	  data: {todos: ["1","2",3,4,5, "hey ",5122871,],
+		  title:"inject",
+	    message: 'asdasd',
+	    seen: true 
+	  },
+	  methods: {
+		    reverseMessage: function () {
+		    	console.log()
+		      this.message = this.message.split('').reverse().join('')
+		    }
+		  }
 	})
 	
-	app.message = "mittagspause" 
+
+	
+	app.message = "HEynanwdnawnd" 
 </script>
 
 </body>
