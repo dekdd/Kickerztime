@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
-  <div id="app">
+  <div id="app" class="theme--light, light-red ">
     <v-app>
       <v-content>
       	<v-toolbar dark color="primary">
-		    <v-toolbar-side-icon></v-toolbar-side-icon>
+		    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 		
 		    <v-toolbar-title class="white--text">HLTV</v-toolbar-title>
 		
@@ -33,15 +33,116 @@
 		      <v-icon>more_vert</v-icon>
 		    </v-btn>
 		  </v-toolbar>
-        <v-container>Hello world</v-container>
-      </v-content>
+		  
+		    <v-layout
+    wrap
+    style="height: 200px;"
+  >
+   
+
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="mini"
+      absolute
+      dark
+      temporary
+    >
+      <v-list class="pa-1">
+        <v-list-tile v-if="mini" @click.stop="mini = !mini">
+          <v-list-tile-action>
+            <v-icon>chevron_right</v-icon>
+          </v-list-tile-action>
+        </v-list-tile>
+
+        <v-list-tile avatar tag="div">
+          <v-list-tile-avatar>
+            <i class="fab fa-500px"></i>
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title>UPDATES</v-list-tile-title>
+          </v-list-tile-content>
+
+          <v-list-tile-action>
+            <v-btn icon @click.stop="mini = !mini">
+              <v-icon>chevron_left</v-icon>
+            </v-btn>
+          </v-list-tile-action>
+        </v-list-tile>
+      </v-list>
+
+      <v-list class="pt-0" dense>
+        <v-divider light></v-divider>
+
+        <v-list-tile
+          v-for="item in items"
+          :key="item.title"
+          @click=""
+        >
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+  </v-layout>
+              </v-content><v-footer
+             
+    height="auto"
+    color="primary lighten-1"
+  >
+    <v-layout
+      justify-center
+      row
+      wrap
+    >
+      <v-btn
+        v-for="link in links"
+        :key="link"
+        color="red"
+        flat
+        round
+      >
+        {{ link }}
+      </v-btn>
+      <v-flex
+        primary
+        lighten-2
+        py-3
+        text-xs-center
+        white--text
+        xs12
+      >
+        &copy;2019 — <strong>D & R & M</strong>
+      </v-flex>
+    </v-layout>
+  </v-footer>
     </v-app>
+    
+    
+    
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
   <script>
-    new Vue({ el: '#app' })
+    new Vue({ el: '#app' 
+    	,data: { drawer: null,
+            items: [
+                { title: 'Matches & Results', icon: 'calendar_today' },
+                { title: 'Betting', icon: 'attach_money' },
+                { title: 'Events', icon: 'event_note' },
+                { title: 'Events', icon: 'event_note' },
+                { title: 'Events', icon: 'event_note' },
+                
+                
+              ],
+              mini: false,
+              right: null}})
   </script>
 </body>
 </html>
