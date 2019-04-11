@@ -1,61 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Example Domain</title>
-
-<meta charset="utf-8" />
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>HLTV</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
+  <div id="app">
+    <v-app>
+      <v-content>
+      	<v-toolbar dark color="primary">
+		    <v-toolbar-side-icon></v-toolbar-side-icon>
+		
+		    <v-toolbar-title class="white--text">HLTV</v-toolbar-title>
+		
+		    <v-spacer></v-spacer>
+		
+		    <v-btn icon>
+		      <v-icon>search</v-icon>
+		    </v-btn>
+		
+		    <v-btn icon>
+		      <v-icon>apps</v-icon>
+		    </v-btn>
+		
+		    <v-btn icon>
+		      <v-icon>refresh</v-icon>
+		    </v-btn>
+		
+		    <v-btn icon>
+		      <v-icon>more_vert</v-icon>
+		    </v-btn>
+		  </v-toolbar>
+        <v-container>Hello world</v-container>
+      </v-content>
+    </v-app>
+  </div>
 
-	<div id="app" title="sdkfhks" >
- <span v-bind:title="title">Hey</span><br/>
-		{{ message }}
-	 <span v-if="seen">Now you see me</span>
-	 
-	 
-	 <ol>
-	  <button v-on:click="reverseMessage">Reverse Message</button>
-    <li v-for="todo in todos">
-      {{ todo}}
-    </li>
-  </ol>
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 </div>
-
-
-	<script type="text/javascript">
-
-var app = new Vue({
-	  el: '#app',
-	  data: {todos: ["1","2",3,4,5, "hey ",5122871,],
-		  title:"inject",
-	    message: 'asdasd',
-	    seen: true 
-	  },
-	  methods: {
-		    reverseMessage: function () {
-		    	console.log()
-		      this.message = this.message.split('').reverse().join('')
-		    }
-		  }
-	})
-	
-
-	
-	app.message = "HEynanwdnawnd" 
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script>
+    new Vue({ el: '#app' })
+  </script>
 </body>
 </html>
