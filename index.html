@@ -11,11 +11,10 @@
   <div id="app" class="theme--light, light-red ">
     <v-app>
       <v-content>
-      	<v-toolbar dark color="primary">
+      	<v-toolbar dark color="blue darken-4">
 		    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 		
-		    <v-toolbar-title class="white--text">HLTV</v-toolbar-title>
-		
+		    <v-toolbar-title class="white--text"  style="width:100%; text-align: center;">HLTV</v-toolbar-title>
 		    <v-spacer></v-spacer>
 		
 		    <v-btn icon>
@@ -39,8 +38,7 @@
     wrap
     style="height: 200px;"
   >
-   
-  
+
    <v-layout>
     <v-flex xs12 sm6 offset-sm3>
       <v-card  v-for="item in feed.items">
@@ -57,7 +55,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat v-bind:href="item.link" fixed="false" color="blue">More Infos</v-btn>
+        <v-btn block color="blue" dark>More infos</v-btn>        
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -114,9 +112,10 @@
     </v-navigation-drawer>
   </v-layout>
               </v-content><v-footer
-             
+    
+    fixed         
     height="auto"
-    color="primary lighten-1"
+    color="blue darken-4"
   >
     <v-layout
       justify-center
@@ -133,16 +132,16 @@
         {{ link }}
       </v-btn>
       <v-flex
-        primary
-        lighten-2
+        blue darken-4
         py-3
         text-xs-center
         white--text
         xs12
       >
-        &copy;2019 — <strong>D & R & M</strong>
+        &copy;2019 — <strong>HLTV Ranking</strong>
       </v-flex>
     </v-layout>
+    
   </v-footer>
     </v-app>
     
@@ -153,7 +152,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
   <script>
-    var app = new Vue({ 
+	var app = new Vue({ 
     	el: '#app',
     	data: { 
     		drawer: null,
