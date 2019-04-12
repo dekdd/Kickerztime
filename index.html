@@ -5,6 +5,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
   <div id="app" class="theme--light, light-red ">
@@ -133,11 +135,13 @@
     new Vue({ el: '#app' 
     	,data: { drawer: null,
             items: [
+            	
                 { title: 'Matches & Results', icon: 'calendar_today' },
-                { title: 'Betting', icon: 'attach_money' },
+                { title: 'Bets', icon: 'attach_money' },
                 { title: 'Events', icon: 'event_note' },
-                { title: 'Events', icon: 'event_note' },
-                { title: 'Events', icon: 'event_note' },
+                { title: 'Ranking', icon: 'event_note' },
+                { title: 'Stats', icon: 'event_note' },
+                { title: 'Live', icon: 'attach_money' },
                 
                 
               ],
